@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Thai Content Sources Configuration
 # Diverse content sources for social media content creation
+=======
+# Thai News Sources Configuration
+# Only verified working RSS feeds
+>>>>>>> b012bc872ddc99229387872c672d7d5ee569ac36
 # Last verified: 2025-11-30
 
 sources:
@@ -20,6 +25,7 @@ sources:
     country: "TH"
     language: "th"
     description: "Manager Online Entertainment News"
+<<<<<<< HEAD
   
   # ✅ LIFESTYLE & INTERESTING CONTENT
   
@@ -69,3 +75,8 @@ sources:
   # - Kapook News/Lifestyle (404)
   # - Thairath Online (504 timeout)
   # - Khaosod (connection error)
+=======
+
+# Note: Other Thai news sources' RSS feeds are currently unavailable (404)
+# ThaiPBS, Sanook, Kapook feeds are not working as of 2025-11-30
+>>>>>>> b012bc872ddc99229387872c672d7d5ee569ac36
