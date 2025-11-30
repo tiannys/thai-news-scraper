@@ -1,0 +1,96 @@
+# Thai News Sources Configuration
+# All sources listed here provide RSS feeds and allow automated access
+# Always verify robots.txt and ToS before scraping
+
+sources:
+  # Major Thai News Portals with RSS
+  - name: "ThaiPBS News"
+    type: "rss"
+    url: "https://news.thaipbs.or.th/rss/news.xml"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Thai Public Broadcasting Service - General News"
+    
+  - name: "ThaiPBS Lifestyle"
+    type: "rss"
+    url: "https://news.thaipbs.or.th/rss/lifestyle.xml"
+    category: "lifestyle"
+    country: "TH"
+    language: "th"
+    description: "Thai PBS Lifestyle Section"
+    
+  - name: "Manager Online - News"
+    type: "rss"
+    url: "https://mgronline.com/rss/news.xml"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Manager Online General News"
+    
+  - name: "Manager Online - Entertainment"
+    type: "rss"
+    url: "https://mgronline.com/rss/entertainment.xml"
+    category: "entertainment"
+    country: "TH"
+    language: "th"
+    description: "Manager Online Entertainment News"
+    
+  - name: "Sanook News"
+    type: "rss"
+    url: "https://www.sanook.com/feed/news/"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Sanook General News Feed"
+    
+  - name: "Sanook Lifestyle"
+    type: "rss"
+    url: "https://www.sanook.com/feed/lifestyle/"
+    category: "lifestyle"
+    country: "TH"
+    language: "th"
+    description: "Sanook Lifestyle Feed"
+    
+  - name: "Kapook News"
+    type: "rss"
+    url: "https://www.kapook.com/feed/news"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Kapook General News"
+    
+  - name: "Kapook Lifestyle"
+    type: "rss"
+    url: "https://www.kapook.com/feed/lifestyle"
+    category: "lifestyle"
+    country: "TH"
+    language: "th"
+    description: "Kapook Lifestyle Content"
+    
+  - name: "Thairath Online"
+    type: "rss"
+    url: "https://www.thairath.co.th/rss/news.xml"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Thairath News Feed"
+    
+  - name: "Khaosod"
+    type: "rss"
+    url: "https://www.khaosod.co.th/feed/"
+    category: "news"
+    country: "TH"
+    language: "th"
+    description: "Khaosod News"
+
+# Note: Always check robots.txt before scraping
+# Example: https://www.sanook.com/robots.txt
+# Respect crawl-delay and disallow directives
+# 
+# RSS feeds are generally allowed for consumption, but verify:
+# 1. robots.txt doesn't disallow /feed/ or /rss/
+# 2. Terms of Service allow automated access
+# 3. Implement rate limiting (recommended: 1 request per 30-60 seconds per domain)
+# 4. Use proper User-Agent identification
+# 5. Cache responses to minimize requests

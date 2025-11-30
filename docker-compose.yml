@@ -1,0 +1,54 @@
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: thai-news-db
+    environment:
+      POSTGRES_USER: newsuser
+      POSTGRES_PASSWORD: newspassword
+      POSTGRES_DB: thai_news
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U newsuser" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - thai-news-network
+
+  # News Scraper API
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thai-news-api
+    environment:
+      DATABASE_URL: postgresql+asyncpg://newsuser:newspassword@db:5432/thai_news
+      DATABASE_URL_SYNC: postgresql://newsuser:newspassword@db:5432/thai_news
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      SCHEDULER_ENABLED: "true"
+      SCHEDULER_FETCH_INTERVAL_MINUTES: 30
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./sources.yaml:/app/sources.yaml:ro
+      - ./logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - thai-news-network
+
+volumes:
+  postgres_data:
+
+
+networks:
+  thai-news-network:
+    driver: bridge
