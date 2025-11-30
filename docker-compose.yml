@@ -12,12 +12,13 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U newsuser" ]
+      test: [ "CMD-SHELL", "pg_isready -U newsuser -d thai_news" ]
       interval: 10s
       timeout: 5s
       retries: 5
     networks:
       - thai-news-network
+    restart: unless-stopped
 
   # News Scraper API
   api:
