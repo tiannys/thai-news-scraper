@@ -1,10 +1,9 @@
-# Thai News Sources Configuration
-# All sources listed here provide RSS feeds and allow automated access
-# Always verify robots.txt and ToS before scraping
+# Thai Content Sources Configuration
+# Diverse content sources for social media content creation
 # Last verified: 2025-11-30
 
 sources:
-  # ✅ VERIFIED WORKING FEEDS
+  # ✅ VERIFIED WORKING FEEDS - NEWS
   
   - name: "Manager Online - News"
     type: "rss"
@@ -21,52 +20,52 @@ sources:
     country: "TH"
     language: "th"
     description: "Manager Online Entertainment News"
-    
-  - name: "Kapook News"
+  
+  # ✅ LIFESTYLE & INTERESTING CONTENT
+  
+  - name: "Bangkok Post - Life"
     type: "rss"
-    url: "https://www.kapook.com/feed/news"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Kapook General News"
-    
-  - name: "Kapook Lifestyle"
-    type: "rss"
-    url: "https://www.kapook.com/feed/lifestyle"
+    url: "https://www.bangkokpost.com/rss/data/life.xml"
     category: "lifestyle"
     country: "TH"
-    language: "th"
-    description: "Kapook Lifestyle Content"
+    language: "en"
+    description: "Bangkok Post Lifestyle - Arts, Entertainment, Social trends (English)"
     
-  - name: "Thairath Online"
+  - name: "Bangkok Post - Most Recent"
     type: "rss"
-    url: "https://www.thairath.co.th/rss/news.xml"
+    url: "https://www.bangkokpost.com/rss/data/most-recent.xml"
     category: "news"
     country: "TH"
-    language: "th"
-    description: "Thairath News Feed"
-    
-  - name: "Khaosod"
-    type: "rss"
-    url: "https://www.khaosod.co.th/feed/"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Khaosod News"
+    language: "en"
+    description: "Bangkok Post Latest Updates (English)"
   
-  # ❌ BROKEN FEEDS (404 Error - Removed)
-  # ThaiPBS News: https://news.thaipbs.or.th/rss/news.xml
-  # ThaiPBS Lifestyle: https://news.thaipbs.or.th/rss/lifestyle.xml
-  # Sanook News: https://www.sanook.com/feed/news/
-  # Sanook Lifestyle: https://www.sanook.com/feed/lifestyle/
+  # ✅ COMMUNITY & VIRAL CONTENT
+  
+  - name: "Reddit - Thailand"
+    type: "rss"
+    url: "https://www.reddit.com/r/Thailand/.rss"
+    category: "community"
+    country: "TH"
+    language: "en"
+    description: "Reddit Thailand community - Viral posts, discussions, local stories"
+    
+  - name: "Pantip - Food Forum"
+    type: "rss"
+    url: "https://www.pantip.com/forum/food/feed"
+    category: "food"
+    country: "TH"
+    language: "th"
+    description: "Pantip Food Forum - Restaurant reviews, recipes, food trends"
 
-# Note: Always check robots.txt before scraping
-# Example: https://www.sanook.com/robots.txt
-# Respect crawl-delay and disallow directives
-# 
-# RSS feeds are generally allowed for consumption, but verify:
-# 1. robots.txt doesn't disallow /feed/ or /rss/
-# 2. Terms of Service allow automated access
-# 3. Implement rate limiting (recommended: 1 request per 30-60 seconds per domain)
-# 4. Use proper User-Agent identification
-# 5. Cache responses to minimize requests
+  # 📝 NOTES:
+  # - Bangkok Post provides English content (good for international audience)
+  # - Reddit r/Thailand has viral stories, expat perspectives, trending topics
+  # - Pantip forums are Thai community discussions (authentic local voice)
+  # - Mix of Thai and English content for diverse social media posts
+  
+  # ❌ BROKEN FEEDS (Removed):
+  # - ThaiPBS News/Lifestyle (404)
+  # - Sanook News/Lifestyle (404)
+  # - Kapook News/Lifestyle (404)
+  # - Thairath Online (504 timeout)
+  # - Khaosod (connection error)
