@@ -8,7 +8,7 @@ from pathlib import Path
 
 from app.config import settings
 from app.database import init_db, AsyncSessionLocal
-from app.api import articles_router, trends_router
+from app.api import articles_router, trends_router, sources_router
 from app.services import scheduler_service
 from app.models import Source
 from sqlalchemy import select
@@ -145,6 +145,7 @@ async def root():
 # Include routers
 app.include_router(articles_router)
 app.include_router(trends_router)
+app.include_router(sources_router)
 
 
 if __name__ == "__main__":

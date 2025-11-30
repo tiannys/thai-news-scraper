@@ -104,3 +104,47 @@ async def trigger_fetch(
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching articles: {str(e)}")
+
+
+@router.post("/fetch/{source_id}", response_model=dict)
+async def trigger_fetch_by_source(
+    source_id: int,
+    db: AsyncSession = Depends(get_db)
+):
+    """
+    Manually trigger article fetching from a specific source
+    
+    - **source_id**: ID of the source to fetch from
+    
+    This endpoint is useful for testing a specific source or forcing an immediate fetch from one source
+    """
+    try:
+        from sqlalchemy import select
+        from app.models import Source
+        
+        # Get the source
+        result = await db.execute(
+            select(Source).where(Source.id == source_id)
+        )
+        source = result.scalar_one_or_none()
+        
+        if not source:
+            raise HTTPException(status_code=404, detail=f"Source with ID {source_id} not found")
+        
+        if not source.is_active:
+            raise HTTPException(status_code=400, detail=f"Source '{source.name}' is not active")
+        
+        # Fetch from this source
+        count = await article_service.fetch_from_source(db, source)
+        
+        return {
+            "status": "success",
+            "source_id": source_id,
+            "source_name": source.name,
+            "new_articles": count
+        }
+    
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error fetching from source: {str(e)}")
