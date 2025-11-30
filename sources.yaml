@@ -1,25 +1,11 @@
 # Thai News Sources Configuration
 # All sources listed here provide RSS feeds and allow automated access
 # Always verify robots.txt and ToS before scraping
+# Last verified: 2025-11-30
 
 sources:
-  # Major Thai News Portals with RSS
-  - name: "ThaiPBS News"
-    type: "rss"
-    url: "https://news.thaipbs.or.th/rss/news.xml"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Thai Public Broadcasting Service - General News"
-    
-  - name: "ThaiPBS Lifestyle"
-    type: "rss"
-    url: "https://news.thaipbs.or.th/rss/lifestyle.xml"
-    category: "lifestyle"
-    country: "TH"
-    language: "th"
-    description: "Thai PBS Lifestyle Section"
-    
+  # ✅ VERIFIED WORKING FEEDS
+  
   - name: "Manager Online - News"
     type: "rss"
     url: "https://mgronline.com/rss/news.xml"
@@ -35,22 +21,6 @@ sources:
     country: "TH"
     language: "th"
     description: "Manager Online Entertainment News"
-    
-  - name: "Sanook News"
-    type: "rss"
-    url: "https://www.sanook.com/feed/news/"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Sanook General News Feed"
-    
-  - name: "Sanook Lifestyle"
-    type: "rss"
-    url: "https://www.sanook.com/feed/lifestyle/"
-    category: "lifestyle"
-    country: "TH"
-    language: "th"
-    description: "Sanook Lifestyle Feed"
     
   - name: "Kapook News"
     type: "rss"
@@ -83,6 +53,12 @@ sources:
     country: "TH"
     language: "th"
     description: "Khaosod News"
+  
+  # ❌ BROKEN FEEDS (404 Error - Removed)
+  # ThaiPBS News: https://news.thaipbs.or.th/rss/news.xml
+  # ThaiPBS Lifestyle: https://news.thaipbs.or.th/rss/lifestyle.xml
+  # Sanook News: https://www.sanook.com/feed/news/
+  # Sanook Lifestyle: https://www.sanook.com/feed/lifestyle/
 
 # Note: Always check robots.txt before scraping
 # Example: https://www.sanook.com/robots.txt

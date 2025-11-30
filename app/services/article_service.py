@@ -134,11 +134,15 @@ class ArticleService:
                 normalized = self.deduplicator.add_hash_to_article(normalized)
                 
                 if normalized['content_hash'] not in existing_hashes:
-                    # Create article
-                    article = await self.create_article(db, normalized)
-                    if article:
+                    # Create article directly to avoid nested async issues
+                    try:
+                        article = Article(**normalized)
+                        db.add(article)
+                        await db.flush()  # Flush instead of commit
                         new_count += 1
                         existing_hashes.add(normalized['content_hash'])
+                    except Exception as e:
+                        logger.error(f"Error creating article: {e}")
             
             # Update source last_fetched_at
             source.last_fetched_at = datetime.utcnow()
