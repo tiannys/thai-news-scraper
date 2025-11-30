@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings
-from typing import List
+from pydantic import field_validator
+from typing import List, Union
 import os
 
 
@@ -16,7 +17,17 @@ class Settings(BaseSettings):
     api_reload: bool = False
     api_workers: int = 4
     api_key: str = "change-this-secret-key"
-    cors_origins: List[str] = ["http://localhost:3000", "http://localhost:8080"]
+    cors_origins: str = "*"  # Changed to str, will be split by comma
+    
+    @field_validator('cors_origins', mode='before')
+    @classmethod
+    def parse_cors_origins(cls, v):
+        """Parse CORS origins from comma-separated string or list"""
+        if isinstance(v, str):
+            if v == "*":
+                return ["*"]
+            return [origin.strip() for origin in v.split(',') if origin.strip()]
+        return v
     
     # Scraper
     scraper_user_agent: str = "ThaiNewsBot/1.0 (+https://yourwebsite.com/bot)"
