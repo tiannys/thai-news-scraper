@@ -13,7 +13,7 @@ class Source(Base):
     type = Column(String(50), nullable=False)  # 'rss', 'html', 'api'
     url = Column(Text, nullable=False, unique=True)
     category = Column(String(100))  # 'news', 'lifestyle', 'tech', 'entertainment'
-    country = Column(String(2), default='TH')
+    country = Column(String(50), default='TH')
     language = Column(String(10), default='th')
     is_active = Column(Boolean, default=True)
     fetch_interval_minutes = Column(Integer, default=30)
