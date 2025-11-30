@@ -18,7 +18,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/thai-news-scraper.git
+git clone https://github.com/tiannys/thai-news-scraper.git
 cd thai-news-scraper
 
 # Copy and configure environment
