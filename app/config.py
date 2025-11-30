@@ -17,17 +17,19 @@ class Settings(BaseSettings):
     api_reload: bool = False
     api_workers: int = 4
     api_key: str = "change-this-secret-key"
-    cors_origins: str = "*"  # Changed to str, will be split by comma
+    cors_origins: Union[str, List[str]] = "*"
     
     @field_validator('cors_origins', mode='before')
     @classmethod
     def parse_cors_origins(cls, v):
         """Parse CORS origins from comma-separated string or list"""
+        if isinstance(v, list):
+            return v
         if isinstance(v, str):
             if v == "*":
                 return ["*"]
             return [origin.strip() for origin in v.split(',') if origin.strip()]
-        return v
+        return ["*"]
     
     # Scraper
     scraper_user_agent: str = "ThaiNewsBot/1.0 (+https://yourwebsite.com/bot)"
