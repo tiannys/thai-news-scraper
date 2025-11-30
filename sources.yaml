@@ -67,6 +67,56 @@ sources:
     language: "th"
     description: "รีวิวร้านอาหาร สูตรอาหาร Food trends"
 
+  # 🌍 WEIRD & STRANGE NEWS - ข่าวแปลกจากทั่วโลก
+  
+  - name: "Oddity Central"
+    type: "rss"
+    url: "https://www.odditycentral.com/feed/"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "Strange, bizarre, and unusual stories from around the world"
+    
+  - name: "UPI - Odd News"
+    type: "rss"
+    url: "https://www.upi.com/odd_news/rss"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "Funny, odd, and strange news headlines worldwide"
+    
+  - name: "Sky News - Weird News"
+    type: "rss"
+    url: "https://feeds.skynews.com/feeds/rss/weird-news.xml"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "Bizarre and amazing weird news stories from across the globe"
+    
+  - name: "Express - Weird News"
+    type: "rss"
+    url: "https://www.express.co.uk/feeds/weird.xml"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "Wacky and bizarre international stories"
+    
+  - name: "Reddit - Offbeat"
+    type: "rss"
+    url: "https://www.reddit.com/r/offbeat/.rss"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "Funny, weird, sad, strange or quirky news from Reddit"
+    
+  - name: "Atlas Obscura"
+    type: "rss"
+    url: "https://www.atlasobscura.com/feeds/latest"
+    category: "weird"
+    country: "GLOBAL"
+    language: "en"
+    description: "World's most wondrous places, strange facts, unique events"
+
   # � CONTENT STRATEGY FOR SOCOOL PAGE:
   # 
   # 🎯 Target Audience: Gen Z, Millennials, Tech-savvy Thais
