@@ -1,6 +1,5 @@
 # Thai News Sources Configuration
-# All sources listed here provide RSS feeds and allow automated access
-# Always verify robots.txt and ToS before scraping
+# Only verified working RSS feeds
 # Last verified: 2025-11-30
 
 sources:
@@ -21,52 +20,6 @@ sources:
     country: "TH"
     language: "th"
     description: "Manager Online Entertainment News"
-    
-  - name: "Kapook News"
-    type: "rss"
-    url: "https://www.kapook.com/feed/news"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Kapook General News"
-    
-  - name: "Kapook Lifestyle"
-    type: "rss"
-    url: "https://www.kapook.com/feed/lifestyle"
-    category: "lifestyle"
-    country: "TH"
-    language: "th"
-    description: "Kapook Lifestyle Content"
-    
-  - name: "Thairath Online"
-    type: "rss"
-    url: "https://www.thairath.co.th/rss/news.xml"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Thairath News Feed"
-    
-  - name: "Khaosod"
-    type: "rss"
-    url: "https://www.khaosod.co.th/feed/"
-    category: "news"
-    country: "TH"
-    language: "th"
-    description: "Khaosod News"
-  
-  # ❌ BROKEN FEEDS (404 Error - Removed)
-  # ThaiPBS News: https://news.thaipbs.or.th/rss/news.xml
-  # ThaiPBS Lifestyle: https://news.thaipbs.or.th/rss/lifestyle.xml
-  # Sanook News: https://www.sanook.com/feed/news/
-  # Sanook Lifestyle: https://www.sanook.com/feed/lifestyle/
 
-# Note: Always check robots.txt before scraping
-# Example: https://www.sanook.com/robots.txt
-# Respect crawl-delay and disallow directives
-# 
-# RSS feeds are generally allowed for consumption, but verify:
-# 1. robots.txt doesn't disallow /feed/ or /rss/
-# 2. Terms of Service allow automated access
-# 3. Implement rate limiting (recommended: 1 request per 30-60 seconds per domain)
-# 4. Use proper User-Agent identification
-# 5. Cache responses to minimize requests
+# Note: Other Thai news sources' RSS feeds are currently unavailable (404)
+# ThaiPBS, Sanook, Kapook feeds are not working as of 2025-11-30
