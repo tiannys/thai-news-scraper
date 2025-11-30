@@ -28,13 +28,16 @@ async def get_articles(
     - **category**: Filter by category (news, lifestyle, entertainment, etc.)
     """
     try:
-        # Parse since parameter
+        # Parse since parameter or default to last 3 days
         since_dt = None
         if since:
             try:
                 since_dt = datetime.fromisoformat(since.replace('Z', '+00:00'))
             except ValueError:
                 raise HTTPException(status_code=400, detail="Invalid datetime format. Use ISO format.")
+        else:
+            # Default: only show articles from last 3 days
+            since_dt = datetime.utcnow() - timedelta(days=3)
         
         # Get articles
         articles = await article_service.get_articles(
