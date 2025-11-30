@@ -143,6 +143,7 @@ class ArticleService:
                         existing_hashes.add(normalized['content_hash'])
                     except Exception as e:
                         logger.error(f"Error creating article: {e}")
+                        await db.rollback()  # Rollback failed insert
             
             # Update source last_fetched_at
             source.last_fetched_at = datetime.utcnow()

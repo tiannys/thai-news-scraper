@@ -1,22 +1,35 @@
-<<<<<<< HEAD
-# Thai Content Sources Configuration
-# Diverse content sources for social media content creation
-=======
-# Thai News Sources Configuration
-# Only verified working RSS feeds
->>>>>>> b012bc872ddc99229387872c672d7d5ee569ac36
+# SOCOOL Content Sources - เนื้อหาเจ๋งๆ สำหรับเพจ socool
+# คอนเทนต์ที่ Cool, Viral, Trendy สำหรับโซเชียลมีเดีย
 # Last verified: 2025-11-30
 
 sources:
-  # ✅ VERIFIED WORKING FEEDS - NEWS
+  # 📱 TECH & GADGETS - เทคโนโลยีและแกดเจ็ต
   
-  - name: "Manager Online - News"
+  - name: "DroidSans"
     type: "rss"
-    url: "https://mgronline.com/rss/news.xml"
-    category: "news"
+    url: "https://droidsans.com/feed/"
+    category: "tech"
     country: "TH"
     language: "th"
-    description: "Manager Online General News"
+    description: "ข่าว Android, Smartphone, Gadgets, IoT - เทคโนโลยีใหม่ๆ"
+    
+  - name: "TechTalkThai"
+    type: "rss"
+    url: "https://techtalkthai.com/feed/"
+    category: "tech"
+    country: "TH"
+    language: "th"
+    description: "ข่าว IT, Enterprise Tech, Cybersecurity"
+  
+  # 📰 NEWS & TRENDING - ข่าวและเทรนด์
+  
+  - name: "Nation Thailand"
+    type: "rss"
+    url: "https://www.nationthailand.com/feeds/rss/news"
+    category: "news"
+    country: "TH"
+    language: "en"
+    description: "Breaking news, Thailand news (English)"
     
   - name: "Manager Online - Entertainment"
     type: "rss"
@@ -24,10 +37,9 @@ sources:
     category: "entertainment"
     country: "TH"
     language: "th"
-    description: "Manager Online Entertainment News"
-<<<<<<< HEAD
+    description: "ข่าวบันเทิง ดารา เซเลบ"
   
-  # ✅ LIFESTYLE & INTERESTING CONTENT
+  # 🎨 LIFESTYLE & CULTURE - ไลฟ์สไตล์
   
   - name: "Bangkok Post - Life"
     type: "rss"
@@ -35,48 +47,55 @@ sources:
     category: "lifestyle"
     country: "TH"
     language: "en"
-    description: "Bangkok Post Lifestyle - Arts, Entertainment, Social trends (English)"
-    
-  - name: "Bangkok Post - Most Recent"
-    type: "rss"
-    url: "https://www.bangkokpost.com/rss/data/most-recent.xml"
-    category: "news"
-    country: "TH"
-    language: "en"
-    description: "Bangkok Post Latest Updates (English)"
+    description: "Arts, Entertainment, Social trends, Lifestyle"
   
-  # ✅ COMMUNITY & VIRAL CONTENT
+  # 🔥 VIRAL & COMMUNITY - ไวรัลและชุมชน
   
   - name: "Reddit - Thailand"
     type: "rss"
     url: "https://www.reddit.com/r/Thailand/.rss"
-    category: "community"
+    category: "viral"
     country: "TH"
     language: "en"
-    description: "Reddit Thailand community - Viral posts, discussions, local stories"
+    description: "Viral stories, trending discussions, community content"
     
-  - name: "Pantip - Food Forum"
+  - name: "Pantip - Food"
     type: "rss"
     url: "https://www.pantip.com/forum/food/feed"
     category: "food"
     country: "TH"
     language: "th"
-    description: "Pantip Food Forum - Restaurant reviews, recipes, food trends"
+    description: "รีวิวร้านอาหาร สูตรอาหาร Food trends"
 
-  # 📝 NOTES:
-  # - Bangkok Post provides English content (good for international audience)
-  # - Reddit r/Thailand has viral stories, expat perspectives, trending topics
-  # - Pantip forums are Thai community discussions (authentic local voice)
-  # - Mix of Thai and English content for diverse social media posts
-  
-  # ❌ BROKEN FEEDS (Removed):
-  # - ThaiPBS News/Lifestyle (404)
-  # - Sanook News/Lifestyle (404)
-  # - Kapook News/Lifestyle (404)
-  # - Thairath Online (504 timeout)
-  # - Khaosod (connection error)
-=======
-
-# Note: Other Thai news sources' RSS feeds are currently unavailable (404)
-# ThaiPBS, Sanook, Kapook feeds are not working as of 2025-11-30
->>>>>>> b012bc872ddc99229387872c672d7d5ee569ac36
+  # � CONTENT STRATEGY FOR SOCOOL PAGE:
+  # 
+  # 🎯 Target Audience: Gen Z, Millennials, Tech-savvy Thais
+  # 
+  # 📊 Content Mix:
+  # - 30% Tech & Gadgets (DroidSans, TechTalkThai)
+  # - 25% Viral/Trending (Reddit, Nation Thailand)
+  # - 20% Entertainment (Manager Online)
+  # - 15% Lifestyle (Bangkok Post)
+  # - 10% Food (Pantip)
+  #
+  # ⏰ Posting Schedule:
+  # - Morning (7-9 AM): Tech news, gadget reviews
+  # - Lunch (12-1 PM): Food content, restaurant reviews
+  # - Evening (6-8 PM): Viral stories, entertainment news
+  # - Night (9-11 PM): Lifestyle, trending topics
+  #
+  # 🎨 Content Types:
+  # - Tech reviews & unboxing
+  # - Viral memes & stories
+  # - Celebrity gossip
+  # - Food porn & restaurant tips
+  # - Trending discussions
+  # - Cool lifestyle hacks
+  #
+  # 🚀 Engagement Boosters:
+  # - "Did you know?" tech facts
+  # - "Viral Alert!" trending stories
+  # - "Food Spot!" restaurant discoveries
+  # - "Cool Hack!" lifestyle tips
+  # - Polls & questions
+  # - User-generated content reshares
